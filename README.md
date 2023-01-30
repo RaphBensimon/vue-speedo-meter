@@ -1,7 +1,30 @@
-# Vue 3 + Vite
+# Vue pad signature [![npm](https://flat.badgen.net/npm/v/speedometer-vue)](https://www.npmjs.com/package/speedometer-vue)
+A simple pad signature for Vue 3
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+<img src="https://user-images.githubusercontent.com/28560613/215468282-d0de6c94-f1fa-4a7c-bb1c-a000b7908cf4.PNG">
 
-## Recommended IDE Setup
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Install
+```bash
+npm install speedometer-vue
+```
+### Basic Usage
+```vue
+<template>
+   <div>
+        <VueSpeedometer v-model="speed" :maxValue="50" />
+    </div>
+</template>
+<script>
+    import { SpeedometerVue } from 'speedometer-vue'
+    export default {
+        components: { SpeedometerVue },
+        data () {
+            return {
+                speed: 50,
+                maxValue: 100
+            }
+        }
+    }
+</script>
+```

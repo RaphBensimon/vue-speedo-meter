@@ -6,7 +6,7 @@ export default {
   },
   data(){
     return {
-      score: 50,
+      score: 66,
       maxValue: 100
     }
   }
@@ -14,8 +14,15 @@ export default {
 </script>
 
 <template>
-  <SpeedometerVue color="#41B883" v-model="score" :maxValue="maxValue" :needle="true"></SpeedometerVue>
+ <div>
+   <SpeedometerVue color="#41B883" v-model="score" :maxValue="maxValue" ></SpeedometerVue>
+  <SpeedometerVue color="#41B883" v-model="score" :maxValue="maxValue" ></SpeedometerVue>
+  <SpeedometerVue color="#41B883" v-model="score" :maxValue="maxValue" ></SpeedometerVue>
+ </div>
 </template>
 
 <style scoped>
+div {
+  display: flex;
+}
 </style>

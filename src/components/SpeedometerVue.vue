@@ -19,24 +19,21 @@
 				    :style="[borderWidthStyle, arcLoadingPosition]" />
             </div>
 		</div>
-       <div v-if="!loading">
         <img :src="needleUrlImg" alt="needle" v-if="needle" class="mc-speedometer-needle" :style="needleStyle"
 		  />
-		<div class="mc-speedometer-value-container" v-else>
+		<div class="mc-speedometer-value-container" v-else-if="!loading">
 			<div
 				class="mc-speedometer-value"
 				:style="`color: ${color}; font-size: ${calculateWidth}px; line-height: ${calculateWidth}px`">
 				{{ modelValue }}
 			</div>
 		</div>
-       </div>
 	</div>
 </template>
 
 <script>
 import needleUrlImg from '@/assets/needle.png'
 export default {
-	name  : 'McSpeedometer',
 	props : {
 		/**
 		 * @ignore
