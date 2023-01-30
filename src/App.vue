@@ -1,12 +1,12 @@
 <script>
-import VueSpeedometer from './components/VueSpeedometer.vue';
+import SpeedometerVue from './components/SpeedometerVue.vue';
 export default {
   components: {
-    VueSpeedometer
+    SpeedometerVue
   },
   data(){
     return {
-      score: 20,
+      score: 50,
       maxValue: 100
     }
   }
@@ -14,7 +14,7 @@ export default {
 </script>
 
 <template>
-  <VueSpeedometer color="#41B883" v-model="score" :maxValue="maxValue"></VueSpeedometer>
+  <SpeedometerVue color="#41B883" v-model="score" :maxValue="maxValue" :needle="true"></SpeedometerVue>
 </template>
 
 <style scoped>

@@ -20,7 +20,8 @@
             </div>
 		</div>
        <div v-if="!loading">
-         <img src="/needle.jpg" v-if="needle" class="mc-speedometer-needle" :style="needleDegree" />
+        <img :src="needleUrlImg" alt="needle" v-if="needle" class="mc-speedometer-needle" :style="needleStyle"
+		  />
 		<div class="mc-speedometer-value-container" v-else>
 			<div
 				class="mc-speedometer-value"
@@ -33,6 +34,7 @@
 </template>
 
 <script>
+import needleUrlImg from '@/assets/needle.png'
 export default {
 	name  : 'McSpeedometer',
 	props : {
@@ -40,8 +42,9 @@ export default {
 		 * @ignore
 		 */
 		modelValue : {
-			type     : Number,
-			required : true
+			type     : [Number, null, String, undefined],
+			required : true,
+			default: 0
 		},
 		/**
 		 * Loading state
@@ -79,6 +82,7 @@ export default {
 	},
 	data() {
 		return {
+			needleUrlImg	 : needleUrlImg,
 			arcPrimaryDegree : -45,
 			arcAlertDegree   : -45,
 			calculateWidth   : 30,
@@ -117,8 +121,8 @@ export default {
 		arcDegree() {
 			return `transform: rotate(${Math.round((this.percentage * 180 / 100) - 45)}deg);`
 		},
-		needleDegree() {
-			return `transform: rotate(${Math.round((this.percentage * 180 / 100) - 90)}deg);`
+		needleStyle() {
+			return `transform: rotate(${Math.round((this.percentage * 180 / 100) - 90)}deg) translateX(-50%); width: ${this.calculateWidth/1.75}px;`
 		},
 		arcColor() {
 			if(this.color) {
@@ -223,7 +227,7 @@ export default {
 	}
 }
 .mc-speedometer-needle {
-    postion: absolute;
+    position: absolute;
     left: 50%;
     transform: translateX(-50%);
     width: 7vw;

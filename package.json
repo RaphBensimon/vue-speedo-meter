@@ -1,7 +1,6 @@
 {
-  "name": "vue-speedometer",
-  "private": true,
-  "version": "0.0.0",
+  "name": "speedometer-vue",
+  "version": "0.0.6",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,11 +8,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "sass": "^1.57.1",
+    "vite-plugin-css-injected-by-js": "^2.4.0",
     "vue": "^3.2.45"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",
+    "sass": "^1.57.1",
     "vite": "^4.0.0"
-  }
+  },
+  "main": "dist/speedometer-vue.js",
+  "files": [
+    "dist/*"
+  ],
+  "repository": "https://github.com/RaphBensimon/speedometer-vue",
+  "bugs": "https://github.com/RaphBensimon/speedometer-vue/issues"
 }
