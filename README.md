@@ -12,7 +12,7 @@ npm install speedometer-vue
 ```vue
 <template>
    <div>
-        <VueSpeedometer v-model="speed" :maxValue="50" color="red" />
+        <SpeedometerVue v-model="speed" :maxValue="50" color="red" />
     </div>
 </template>
 <script>
@@ -32,7 +32,7 @@ npm install speedometer-vue
 ```vue
 <template>
    <div>
-        <VueSpeedometer v-model="speed" :maxValue="50" :loading="true" />
+        <SpeedometerVue v-model="speed" :maxValue="50" :loading="true" />
     </div>
 </template>
 <script>
@@ -52,7 +52,7 @@ npm install speedometer-vue
 ```vue
 <template>
    <div>
-        <VueSpeedometer v-model="speed" :maxValue="50" :needle="true" />
+        <SpeedometerVue v-model="speed" :maxValue="50" :needle="true" />
     </div>
 </template>
 <script>
